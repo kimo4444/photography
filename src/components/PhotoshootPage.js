@@ -3,7 +3,7 @@ import pictureSource from '../fixtures/pictures.js';
 import Navigation from './Navigation';
 import {Link} from 'react-router-dom';
 import FaColumns from 'react-icons/lib/fa/columns';
-import FaTable from 'react-icons/lib/fa/table';
+import FaTh from 'react-icons/lib/fa/th';
 
 
 
@@ -13,7 +13,7 @@ export default class PhotoshootPage extends React.Component{
   state = {
     display:'inline',
     lightbox: false,
-    lightboxPic:''
+    lightboxImg:''
   }
   handleDisplaySelection = (e, text) => {
     e.preventDefault();
@@ -32,13 +32,11 @@ export default class PhotoshootPage extends React.Component{
      })
    }
 
-     handleLightbox = (lightboxPic) => {
+     handleLightbox = (lightboxImg) => {
        this.setState((prevState) => ({
          lightbox:!prevState.lightbox,
-         lightboxPic
+         lightboxImg
        }))
-     console.log(lightboxPic)
-     console.log(window.innerWidth);
      }
      onLightboxClose = () => {
        this.setState(() => ({
@@ -49,31 +47,37 @@ export default class PhotoshootPage extends React.Component{
 
   render(){
     const width = window.innerWidth;
+
     let noLightbox = 'true';
     if (width<650){
       noLightbox = false;
 
    }
-   console.log(noLightbox)
-    console.log(width)
+
     const photoshoot = this.props.match.params.shoot;
     const photoshootToShow = pictureSource.filter(picture => {
       return picture.description === photoshoot})
+
+
     return (
-      <div className = 'main '>
-      <div className = {noLightbox && this.state.lightbox === true ? 'lightbox active' : 'lightbox'} onClick = {() => this.onLightboxClose()}>
-        <div>
-          <img className ='lightboxPic' src = {`/${this.state.lightboxPic}`} /></div>
+      <div className = 'page-transition'>
+      <div className = {noLightbox && this.state.lightbox === true ? 'lightbox lightbox--active' : 'lightbox'} onClick = {() => this.onLightboxClose()}>
+          <img className ='lightbox__image' src = {`${this.state.lightboxImg}`} />
+      </div>
+      <div className = 'photoshoot__display-type'>
+        <a href =''  onClick = {((e, display) => this.handleDisplaySelection(e, 'column'))}>
+            <FaColumns className = 'photoshoot__display-type__icon' />
+        </a>
+        <a href ='' onClick = {((e, display) => this.handleDisplaySelection(e, 'table'))}>
+            <FaTh className = 'photoshoot__display-type__icon' />
+        </a>
       </div>
         <Navigation />
 
-          <div className = 'display-icon'>
-            <a href ='' className = 'icon' onClick = {((e, display) => this.handleDisplaySelection(e, 'column'))}><FaColumns /></a>
-            <a href ='' className = 'icon' onClick = {((e, display) => this.handleDisplaySelection(e, 'table'))}><FaTable /></a>
-          </div>
-          <div className = {this.state.display==='inline' ? 'photoshoot' : 'table'} id = 'h'>
-       {photoshootToShow[0].source.map(picture => {
-         return(<img src = {`/${picture}`} key = {picture} onClick = {() => this.handleLightbox(picture)}/>)
+        <div className = {this.state.display==='inline' ? 'photoshoot' : 'table'} id = 'h'>
+
+          {photoshootToShow[0].source.map(picture => {
+         return(<img src = {`${picture}`} key = {picture} onClick = {() => this.handleLightbox(picture)}/>)
        })}
 
       </div>

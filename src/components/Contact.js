@@ -11,8 +11,8 @@ const Contact =(props) => {
         <Navigation />
         <div className = 'contact'>
         My Film works are influenced by Patrick Demarchelier's perfected studio lighting and Peter Lindbergh's cinematic location work. I adopted best of both world and made my own style.
-        <br />
-        <FaEnvelope />
+      
+        <br/><FaEnvelope />
         Email: jaykimfilm@gmail.com
         </div>
       </div>

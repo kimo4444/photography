@@ -2,24 +2,30 @@
 * {
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Inconsolata', sans-serif;
+    font-family: 'Oswald', sans-serif;
     list-style: none;
-
+    letter-spacing: 1px;
 }
 
 body{
   margin:0;
+
 }
 html{
   margin:0;
   padding:0;
 }
-.switch-wrapper {
-  position: relative;
-}
 
 .page-transition{
-  position: absolute;
-  width:100vw;
+  margin:0 auto;
+  width:98%;
+  height:100%;
+  position:relative;
 
+
+
+
+}
+a{
+  color:#555659;
 }
