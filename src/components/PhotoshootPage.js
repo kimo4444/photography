@@ -2,8 +2,6 @@ import React from 'react';
 import pictureSource from '../fixtures/pictures.js';
 import Navigation from './Navigation';
 import {Link} from 'react-router-dom';
-import FaColumns from 'react-icons/lib/fa/columns';
-import FaTh from 'react-icons/lib/fa/th';
 
 
 
@@ -66,10 +64,10 @@ export default class PhotoshootPage extends React.Component{
       </div>
       <div className = 'photoshoot__display-type'>
         <a href =''  onClick = {((e, display) => this.handleDisplaySelection(e, 'column'))}>
-            <FaColumns className = 'photoshoot__display-type__icon' />
+            Horizontal Display
         </a>
         <a href ='' onClick = {((e, display) => this.handleDisplaySelection(e, 'table'))}>
-            <FaTh className = 'photoshoot__display-type__icon' />
+            Vertical Display
         </a>
       </div>
         <Navigation />
