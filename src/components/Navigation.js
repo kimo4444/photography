@@ -1,8 +1,8 @@
 import React from 'react';
 import Contact from './Contact';
 import {Link} from 'react-router-dom';
-import FaInstagram from 'react-icons/lib/fa/instagram';
-import FaVimeo from 'react-icons/lib/fa/vimeo';
+import {FaInstagram} from 'react-icons/lib/fa/instagram';
+import {FaVimeo} from 'react-icons/lib/fa/vimeo';
 
 
 
