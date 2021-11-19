@@ -6,16 +6,7 @@
   "dependencies": {
     "compression": "^1.7.3",
     "express": "^4.16.2",
-    "helmet": "^3.12.1"
-  },
-  "author": "Olga kim",
-  "license": "ISC",
-  "scripts": {
-    "build": "webpack --mode production",
-    "dev-server": "webpack-dev-server --mode development --open",
-    "start": "node server.js"
-  },
-  "devDependencies": {
+    "helmet": "^3.12.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -44,5 +35,12 @@
     "react-icons": "^3.1.0",
     "react-router-transition": "^1.1.2",
     "react-youtube": "^7.5.0"
+  },
+  "author": "Olga kim",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev-server": "webpack-dev-server --mode development --open",
+    "start": "node server.js"
   }
 }
