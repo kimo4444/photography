@@ -1,8 +1,7 @@
 import React from 'react';
 import Contact from './Contact';
 import {Link} from 'react-router-dom';
-import {FaInstagram} from 'react-icons/fa/instagram';
-import {FaVimeo} from 'react-icons/fa/vimeo';
+
 
 
 
@@ -16,12 +15,6 @@ export default class Navigation extends React.Component  {
 
     }))
   }
-  // <a  href = 'https://www.instagram.com/jaykimfilm/?hl=en'>
-  //     <FaInstagram className='navbar__media' />
-  // </a>
-  // <a href = 'https://www.instagram.com/jaykimfilm/?hl=en'>
-  //   <FaVimeo className='navbar__media' />
-  // </a>
 
   render(){
   return (
